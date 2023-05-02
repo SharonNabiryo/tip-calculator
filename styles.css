@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #c5e4e7;
+  margin: 0px;
+  padding: 0;
+  height: 100vh;
+  font-family: "Space Mono", monospace;
+}
+.logo {
+  display: flex;
+  /* text-align: center; */
+  margin: 20px auto;
+}
+
+.Bill {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+.select-tip {
+  /* width: 100%; */
+  margin: 20px;
+}
+
+.tip-btn {
+  background-color: hsl(183, 100%, 15%);
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.tip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+}
+
+.active-btn {
+  background-color: #26c2ae;
+  color: black;
+}
+
+.result {
+  background-color: hsl(183, 100%, 15%);
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  /* width: 100%; */
+  margin: 20px;
+}
+
+.bill-input,
+.custom-input,
+.people-input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 20px;
+  background-color: hsl(189, 41%, 97%);
+  text-align: right;
+  color: hsl(183, 100%, 15%);
+}
+
+.bill-input {
+  background-image: url(./images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+}
+.people-input {
+  background-image: url(./images/icon-person.svg);
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+}
+
+h1 {
+  color: #5e7a7d;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.peopleLabel {
+  margin: 40px auto;
+}
+
+.error {
+  color: red;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0px;
+  display: none;
+}
+.tip-amount,
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount {
+  display: flex;
+  /* margin-top: 10px; */
+  font-weight: 600;
+  color: #26c2ae;
+  font-size: 30px;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.text p {
+  margin-bottom: 0px;
+}
+
+.person {
+  color: #7f9d9f;
+  margin-top: 0px;
+}
+
+.reset-btn {
+  width: 100%;
+  background-color: hsl(172, 67%, 45%);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+  /* color: white; */
+  font-size: 20px;
+  font-weight: 500;
+  margin: 20px auto;
+}
+
+@media (min-width: 800px) {
+  .Bill {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: red; */
+  }
+}
