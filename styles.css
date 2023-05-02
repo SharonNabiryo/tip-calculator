@@ -8,22 +8,25 @@ body {
   padding: 0;
   height: 100vh;
   font-family: "Space Mono", monospace;
+  width: 100%;
 }
 .logo {
   display: flex;
-  /* text-align: center; */
-  margin: 20px auto;
+  text-align: center;
+  margin: 40px auto;
 }
 
 .Bill {
   background-color: #fff;
   border-radius: 5px;
-  padding: 10px;
+  padding: 2rem;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .select-tip {
-  /* width: 100%; */
+  width: 100%;
   margin: 20px;
 }
 
@@ -34,7 +37,9 @@ body {
   outline: none;
   padding: 10px 20px;
   border-radius: 5px;
-  width: 150px;
+  /* width: 150px; */
+  height: 50px;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -79,6 +84,12 @@ body {
   background-repeat: no-repeat;
   background-position: 10px 50%;
 }
+.custom-input {
+  background-image: url(./images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+  min-width: 100%;
+}
 .people-input {
   background-image: url(./images/icon-person.svg);
   background-repeat: no-repeat;
@@ -91,9 +102,9 @@ h1 {
   font-weight: 600;
 }
 
-.peopleLabel {
+/* .peopleLabel {
   margin: 40px auto;
-}
+} */
 
 .error {
   color: red;
@@ -148,6 +159,41 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    /* width: 800px; */
+    width: 90vw;
+    margin: 20px auto;
+    border-radius: 20px;
+    padding: 2.3rem;
+    /* height: 479px; */
     /* background-color: red; */
+  }
+  .tip {
+    grid-template-columns: 135px 135px 135px;
+    row-gap: 1.2rem;
+    column-gap: 17px;
+    margin-bottom: 3.2rem;
+  }
+  .tip-btn {
+    height: 55px;
+  }
+  .result {
+    margin-left: auto;
+    width: 400px;
+    /* width: 100%; */
+    /* margin: 0px; */
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    padding: 48px 35px;
+  }
+  /* .reset-btn {
+    margin-top: auto;
+  } */
+  .part-one {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 50%;
+    margin: 15px;
   }
 }
