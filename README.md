@@ -1,5 +1,7 @@
 # Frontend Mentor - Tip calculator app
 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/55ade6f7-83c8-441e-a33e-9f0d37ff500f/deploy-status)](https://app.netlify.com/sites/tip-calculator-for-bills/deploys)
 ![Design preview for the Tip calculator app coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
