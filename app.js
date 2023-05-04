@@ -17,20 +17,22 @@ resetBtn.addEventListener("click", reset);
 
 billInput.value = "";
 peopleInput.value = "1";
-tipPerPerson.innerHTML = "$" + (0.0).toFixed(2);
-totalPerPerson.innerHTML = "$" + (0.0).toFixed(2);
+tipPerPerson.innerHTML = "$0.00";
+totalPerPerson.innerHTML = "$0.00";
+// tipPerPerson.innerHTML = "$" + (0.0).toFixed(2);
+// totalPerPerson.innerHTML = "$" + (0.0).toFixed(2);
 
 let billValue = 0.0;
 let peopleValue = 1;
 let tipValue = 0.15;
 
 function addBillTotal() {
-  billValue = parseFloat(billInput.value);
+  billValue = parseFloat(billInput.value) || 0.0; // default to 0.0 if NaN
   calculateTip();
 }
 
 function addPeople() {
-  peopleValue = parseInt(peopleInput.value);
+  peopleValue = parseInt(peopleInput.value) || 1; // default to 1 if NaN
 
   if (peopleValue < 1) {
     error.style.display = "block";
@@ -43,7 +45,12 @@ function addPeople() {
 }
 
 function customInput() {
-  tipValue = parseFloat(tipCustom.value) / 100;
+  tipValue = parseFloat(tipCustom.value) / 100 || 0.0;
+
+  if (tipCustom.value === "") {
+    tipValue = 0;
+  }
+
   tips.forEach(function (val) {
     val.classList.remove("active-btn");
   });
@@ -63,20 +70,23 @@ function handleClick(event) {
 }
 
 function calculateTip() {
-  billValue = parseFloat(billInput.value) || 0.0; // default to 0.0 if NaN
-  peopleValue = parseInt(peopleInput.value) || 1; // default to 1 if NaN
+  let totalTip = billValue * tipValue;
+  let tipAmount =
+    tipCustom.value === ""
+      ? totalTip / peopleValue
+      : parseFloat(tipCustom.value) / peopleValue;
+  let total =
+    tipCustom.value === ""
+      ? (billValue + totalTip) / peopleValue
+      : (billValue + parseFloat(tipCustom.value)) / peopleValue;
+  //   let total = (billValue + totalTip) / peopleValue;
 
-  if (peopleValue >= 1) {
-    let totalTip = billValue * tipValue;
-    let tipAmount = totalTip / peopleValue;
-    let total = (billValue + totalTip) / peopleValue;
-    tipPerPerson.innerHTML = "$" + tipAmount.toFixed(2);
-    totalPerPerson.innerHTML = "$" + total.toFixed(2);
-  }
+  tipPerPerson.innerHTML = "$" + tipAmount.toFixed(2);
+  totalPerPerson.innerHTML = "$" + total.toFixed(2);
 }
 
 function reset() {
-  billInput.value = "0.0";
+  billInput.value = "";
   addBillTotal();
   peopleInput.value = "1";
   addPeople();
